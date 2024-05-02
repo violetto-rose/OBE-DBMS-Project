@@ -2,7 +2,7 @@
 
 The OBE Tracker is a project aimed at facilitating Outcome-Based Education (OBE) by providing a comprehensive system for tracking Course and Program outcomes, along with subject information.
 
----
+
 
 ## Features
 
