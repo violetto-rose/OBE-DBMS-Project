@@ -36,7 +36,7 @@ Contributions to the OBE Tracker project are welcome! Whether you're skilled in 
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md). See the [LICENSE](LICENSE.md) file for more details.
+This project is licensed under the [MIT License](https://opensource.org/license/mit). See the [LICENSE](https://github.com/violetto-rose/obe_dbms_project/blob/main/LICENSE) file for more details.
 
 ## Contact
 
