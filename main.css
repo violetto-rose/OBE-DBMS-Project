@@ -1,0 +1,107 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*Body and footers*/
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+footer {
+  padding: 4rem;
+}
+
+/*Title*/
+.title {
+  display: block;
+  padding-bottom: 2rem;
+}
+
+.pagetitle {
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+
+.pagesubtitle {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/*Content*/
+.content {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.selection {
+  padding: 3rem;
+  display: grid;
+}
+
+.scheme {
+  padding-bottom: 1rem;
+}
+
+.semester {
+  padding-bottom: 1rem;
+}
+
+.headings {
+  font-size: 1.5rem;
+}
+
+.info {
+  font-size: 0.9rem;
+}
+
+.info ul {
+  list-style-position: inside;
+}
+
+.info li {
+  padding-left: 1rem;
+}
+
+/*Inputs*/
+button,
+select {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+button {
+  width: 5.5rem;
+  height: 2.5rem;
+  border: none;
+  outline: none;
+  background: #2f2f2f;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+select {
+  padding: 0.2rem;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+
+/*Mode*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
