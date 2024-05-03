@@ -80,6 +80,7 @@
 
       while ($row = $result->fetch_assoc()) {
         $course_outcomes = nl2br($row["course_outcomes"]);
+
         echo "<div class='outcomes'>
                 <tr>
                   <td>" . $row["serial_number"] . "</td>
@@ -103,7 +104,7 @@
   <div class="button-container">
     <a href="main.html" class="home-button">Home</a>
   </div>
-  
+
 </body>
 
 </html>
