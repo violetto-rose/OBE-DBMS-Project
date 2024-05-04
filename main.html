@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,12 +26,13 @@
   </head>
 
   <!--Body-->
-
   <body>
     <!--Title-->
     <div class="title">
-      <div class="pagetitle">
-        <p>OBE CO-PO Tracker</p>
+      <div class="flex">
+        <div class="pagetitle">
+          <p>OBE CO-PO Tracker</p>
+        </div>
       </div>
       <div class="pagesubtitle">
         <p>Assessing Course and Program Outcomes</p>
@@ -38,23 +41,44 @@
 
     <!--Content-->
     <div class="content">
-      <p>Department of Computer Science and Design</p>
+      <p>Bachelor of Engineering</p>
     </div>
 
-    <!--Selection of scheme and semester-->
+    <!--Selection of Department, scheme and semester-->
     <form action="obe.php" method="post">
       <div class="selection">
+        <!-- Department -->
+        <div class="dept">
+          <label for="dept">Select your department</label>
+          <select id="dept" name="dept">
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="ise">Information Science and Engineering</option>
+            <option value="aiml">
+              Artificial Intelligence and Machine Learning
+            </option>
+            <option value="csd">Computer Science and Design</option>
+            <option value="csds">Data Science and Engineering</option>
+            <option value="ece">
+              Electronics and Communication Engineering
+            </option>
+            <option value="eee">Electrical and Electronics Engineering</option>
+            <option value="me">Mechanical Engineering</option>
+            <option value="cv">Civil Engineering</option>
+          </select>
+        </div>
+
+        <!-- Scheme -->
         <div class="scheme">
           <label for="scheme">Select your scheme</label>
-          <select name="scheme">
+          <select id="scheme" name="scheme">
             <option value="2022">2022</option>
           </select>
         </div>
 
-        <!--Semester-->
+        <!-- Semester -->
         <div class="semester">
           <label for="semester">Select your semester</label>
-          <select name="semester">
+          <select id="semester" name="semester">
             <option value="3">3rd Semester</option>
             <option value="4">4th Semester</option>
             <option value="5">5th Semester</option>
@@ -63,14 +87,12 @@
             <option value="8">8th Semester</option>
           </select>
         </div>
+
         <div class="mybutton">
           <button type="submit">Submit</button>
         </div>
       </div>
     </form>
-
-    <!--Script-->
-    <script src="redirect.js"></script>
   </body>
 
   <!--Footer-->

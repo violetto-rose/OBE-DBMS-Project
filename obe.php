@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -43,6 +45,30 @@
     }
   }
 
+  function deptname($dept)
+  {
+    switch ($dept) {
+      case 'cse':
+        return 'Computer Science and Engineering';
+      case 'ise':
+        return 'Information Science and Engineering';
+      case 'aiml':
+        return 'Artificial Intelligence and Machine Learning';
+      case 'csd':
+        return 'Computer Science and Design';
+      case 'csds':
+        return 'Data Science and Engineering';
+      case 'ece':
+        return 'Electronics and Communication Engineering';
+      case 'eee':
+        return 'Electrical and Electronics Engineering';
+      case 'me':
+        return 'Mechanical Engineering';
+      case 'cv':
+        return 'Civil Engineering';
+    }
+  }
+
   // Establish a database connection
   $servername = "localhost";
   $username = "root";
@@ -56,12 +82,13 @@
 
   // Fetch data from the database based on the selected scheme and semester
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $dept = $_POST["dept"];
     $scheme = $_POST["scheme"];
     $semester = $_POST["semester"];
-    $sql = "SELECT * FROM subjects WHERE scheme_year = $scheme AND semester = $semester";
+    $sql = "SELECT * FROM $dept WHERE scheme_year = $scheme AND semester = $semester";
 
     echo "<div class='head'>
-            <h1>Department of Computer Science and Design</h1>
+            <h1>Department of " . deptname($dept) . "</h1>
             <h2>OBE Report of " . addSuffix($semester) . " Semester, $scheme Scheme</h2>
             <br />
             <hr />

@@ -8,10 +8,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  background: linear-gradient(45deg, #FDFCFB, #E2D1C3);
 }
 
 footer {
   padding: 4rem;
+  padding-top: 2rem;
 }
 
 /*Title*/
@@ -20,11 +22,23 @@ footer {
   padding-bottom: 2rem;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .pagetitle {
   font-size: 3rem;
+  display: inline-block;
+  font-weight: bold;
   text-align: center;
   padding: 2rem;
   padding-bottom: 1rem;
+  background-image: linear-gradient(45deg, #FF512F, #DD2476);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .pagesubtitle {
@@ -41,7 +55,12 @@ footer {
 
 .selection {
   padding: 3rem;
+  padding-top: 2rem;
   display: grid;
+}
+
+.dept {
+  padding-bottom: 1rem;
 }
 
 .scheme {
@@ -78,10 +97,10 @@ select {
 button {
   width: 5.5rem;
   height: 2.5rem;
-  border: none;
+  border: 1px solid black;
   outline: none;
-  background: #2f2f2f;
-  color: #ffffff;
+  background: #b5b5b5;
+  color: black;
   font-size: 1rem;
   border-radius: 3rem;
   text-align: center;
@@ -90,18 +109,44 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  color: white;
+  background: black;
+}
+
 select {
   padding: 0.2rem;
-  border: 1px solid #808080;
+  border: 1px solid black;
   border-radius: 5px;
-  background-color: #2f2f2f;
-  color: #ffffff;
+  background-color: #b5b5b5;
+  color: black;
 }
 
 /*Mode*/
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: black;
+    background: black;
+    color: white;
+  }
+
+  .pagetitle {
+    background-image: linear-gradient(45deg, #FFECD2, #FCB69F);
+  }
+
+  button {
+    border: 1px solid white;
+    background: #2f2f2f;
+    color: white;
+  }
+
+  button:hover {
+    color: black;
+    background: white;
+  }
+
+  select {
+    border: 1px solid white;
+    background-color: #2f2f2f;
     color: white;
   }
 }
