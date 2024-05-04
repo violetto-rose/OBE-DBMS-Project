@@ -22,7 +22,7 @@ Before you begin, ensure you have met the following requirements:
 
 2. **OBE Based on NEP - 2022**: The Outcome-Based Education (OBE) framework implemented in this project is based on the National Education Policy (NEP) - 2022.
 
-3. **Available Subjects**: The subjects available in the OBE Tracker are currently from the CSE, ISE, AIML, CSD, CSD, ECE, EEE, ME, CV department with the 2022 and above scheme. Please note that it does not include basic science subjects.
+3. **Available Subjects**: The subjects available in the OBE Tracker are currently from the CSE, ISE, AIML, CSD, CSDS, ECE, EEE, ME, CV department with the 2022 and above scheme. Please note that it does not include basic science subjects.
 
 ## Contributing
 
