@@ -5,6 +5,7 @@
 
 /*Body and footers*/
 body {
+  background: linear-gradient(180deg, #ffffff, #676767);
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-family: "Poppins", sans-serif;
@@ -39,7 +40,7 @@ hr {
   display: inline-block;
   text-align: center;
   padding: 0.8rem 1.2rem;
-  background-color: #949494;
+  background-color: #ffffff;
   color: black;
   text-decoration: none;
   border-radius: 5px;
@@ -85,7 +86,7 @@ td.outcomes {
 /*Mode*/
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: black;
+    background: black;
     color: white;
   }
 
