@@ -26,7 +26,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Contributing
 
-Contributions to the OBE Tracker project are welcome! Whether you're skilled in frontend development, database management, or educational assessment methodologies, there's a place for you in our open-source community. To contribute, please follow these steps:
+Contributions to the OBE Tracker project are welcome! Whether you're skilled in frontend development, database management, or educational assessment methodologies, there's a place for you in my open-source project. To contribute, please follow these steps:
 
 1. Fork the repository on GitHub.
 2. Create a new branch for your feature or bug fix.
