@@ -11,6 +11,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  min-height: 94vh;
 }
 
 /*Heading and contents*/
@@ -88,6 +89,16 @@ td.outcomes {
   body {
     background: black;
     color: white;
+  }
+
+  h1 {
+    background: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRmaXYxcXh2bnhlaXdwd2xjbDc2azQzbjB6bGIyMWJwaWRsazYzbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5RKNOaiojPbbMUsikF/giphy.gif);
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: rgba(255, 255, 255, 0);
+    background-repeat: no-repeat;
   }
 
   hr {

@@ -8,12 +8,19 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: linear-gradient(45deg, #FDFCFB, #E2D1C3);
+  background: linear-gradient(45deg, #fdfcfb, #e2d1c3);
 }
 
 footer {
   padding: 4rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  height: 0.2rem;
+  margin: 1rem 0rem 1rem 0rem;
 }
 
 /*Title*/
@@ -35,7 +42,7 @@ footer {
   text-align: center;
   padding: 2rem;
   padding-bottom: 1rem;
-  background-image: linear-gradient(45deg, #FF512F, #DD2476);
+  background-image: linear-gradient(45deg, #ff512f, #dd2476);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -50,7 +57,6 @@ footer {
 .content {
   font-size: 1.2rem;
   text-align: center;
-  padding: 1rem;
 }
 
 .selection {
@@ -85,6 +91,23 @@ footer {
 
 .info li {
   padding-left: 1rem;
+}
+
+/*Footer*/
+.right {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );
+}
+
+.left {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );
 }
 
 /*Inputs*/
@@ -129,8 +152,28 @@ select {
     color: white;
   }
 
+  .right {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    );
+  }
+
+  .left {
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    );
+  }
+
   .pagetitle {
-    background-image: linear-gradient(45deg, #FFECD2, #FCB69F);
+    background-image: linear-gradient(
+      -45deg,
+      rgb(224, 180, 209),
+      rgb(142, 193, 250)
+    );
   }
 
   button {
