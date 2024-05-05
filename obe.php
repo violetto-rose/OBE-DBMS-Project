@@ -110,11 +110,11 @@
 
         echo "<div class='outcomes'>
                 <tr>
-                    <td>" . $row["serial_number"] . "</td>
-                    <td>" . $row["subject_number"] . "</td>
-                    <td>" . $row["subject_name"] . "</td>
-                   <td>" . $row["faculty"] . "</td>
-                   <td class='outcomes'>" . $course_outcomes . "</td>
+                  <td>" . $row["serial_number"] . "</td>
+                  <td>" . $row["subject_number"] . "</td>
+                  <td>" . $row["subject_name"] . "</td>
+                  <td>" . $row["faculty"] . "</td>
+                  <td class='outcomes'>" . $course_outcomes . "</td>
                 </tr>
               </div>";
       }
