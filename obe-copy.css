@@ -14,6 +14,11 @@ body {
   min-height: 94vh;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 /*Heading and contents*/
 .head {
   text-align: center;
@@ -30,6 +35,29 @@ hr {
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0)
   );
+}
+
+.button {
+  display: flex;
+  padding: 2rem;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 3rem;
+  position: relative;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  a {
+    transition: all 0.5s;
+    color: black;
+  }
+  background-color: white;
 }
 
 .button-container {
