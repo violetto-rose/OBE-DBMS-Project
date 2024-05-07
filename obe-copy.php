@@ -13,7 +13,7 @@
     content="A project on OBE (Outcome based education) tracker with Course and Program outcome details along with subject information." />
 
   <!--Styles-->
-  <link rel="stylesheet" href="obe.css" />
+  <link rel="stylesheet" href="obe-copy.css" />
 
   <!--Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,34 +45,10 @@
     }
   }
 
-  function deptname($dept)
-  {
-    switch ($dept) {
-      case 'cse':
-        return 'Computer Science and Engineering';
-      case 'ise':
-        return 'Information Science and Engineering';
-      case 'aiml':
-        return 'Artificial Intelligence and Machine Learning';
-      case 'csd':
-        return 'Computer Science and Design';
-      case 'csds':
-        return 'Data Science and Engineering';
-      case 'ece':
-        return 'Electronics and Communication Engineering';
-      case 'eee':
-        return 'Electrical and Electronics Engineering';
-      case 'me':
-        return 'Mechanical Engineering';
-      case 'cv':
-        return 'Civil Engineering';
-    }
-  }
-
   // Establish a database connection
   $servername = "localhost";
   $username = "root";
-  $dbname = "OBE";
+  $dbname = "csd";
 
   $conn = new mysqli($servername, $username, "", $dbname);
 
@@ -82,13 +58,12 @@
 
   // Fetch data from the database based on the selected scheme and semester
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $dept = $_POST["dept"];
     $scheme = $_POST["scheme"];
     $semester = $_POST["semester"];
-    $sql = "SELECT * FROM $dept WHERE scheme_year = $scheme AND semester = $semester";
+    $sql = "SELECT * FROM csd WHERE scheme_year = $scheme AND semester = $semester";
 
     echo "<div class='head'>
-            <h1>Department of " . deptname($dept) . "</h1>
+            <h1>Department of Computer Science and Design</h1>
             <h2>OBE Report of " . addSuffix($semester) . " Semester, $scheme Scheme</h2>
             <br />
             <hr />
@@ -100,21 +75,21 @@
               <tr>
                 <th>Serial Number</th>
                 <th>Subject Number</th>
+                <th>Subject Code</th>
                 <th>Subject Name</th>
                 <th>Faculty</th>
-                <th>Course Outcomes</th>
+                <th>CO-PO Attainment</th>
               </tr>";
 
       while ($row = $result->fetch_assoc()) {
-        $course_outcomes = nl2br($row["course_outcomes"]);
-
         echo "<div class='outcomes'>
                 <tr>
                   <td>" . $row["serial_number"] . "</td>
                   <td>" . $row["subject_number"] . "</td>
+                  <td>" . $row["subject_code"] . "</td>
                   <td>" . $row["subject_name"] . "</td>
                   <td>" . $row["faculty"] . "</td>
-                  <td class='outcomes'>" . $course_outcomes . "</td>
+                  <td>" . $attainments . "</td>
                 </tr>
               </div>";
       }
@@ -129,7 +104,7 @@
   ?>
 
   <div class="button-container">
-    <a href="main.html" class="home-button">Home</a>
+    <a href="main-copy.html" class="home-button">Home</a>
   </div>
 
 </body>

@@ -31,8 +31,18 @@ hr {
 
 .flex {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.flex h1 {
+  margin-top: 2rem;
+}
+
+.blue {
+  color: rgba(30,8,91,255);
+  text-shadow: 0px 0px 25px white;
 }
 
 .pagetitle {
@@ -63,10 +73,6 @@ hr {
   padding: 3rem;
   padding-top: 2rem;
   display: grid;
-}
-
-.dept {
-  padding-bottom: 1rem;
 }
 
 .scheme {
@@ -130,6 +136,7 @@ button {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 button:hover {
@@ -143,53 +150,10 @@ select {
   border-radius: 5px;
   background-color: #b5b5b5;
   color: black;
+  transition: all 0.5s;
 }
 
-/*Mode*/
-@media (prefers-color-scheme: dark) {
-  body {
-    background: black;
-    color: white;
-  }
-
-  .right {
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-    );
-  }
-
-  .left {
-    background: linear-gradient(
-      to left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-    );
-  }
-
-  .pagetitle {
-    background-image: linear-gradient(
-      -45deg,
-      rgb(224, 180, 209),
-      rgb(142, 193, 250)
-    );
-  }
-
-  button {
-    border: 1px solid white;
-    background: #2f2f2f;
-    color: white;
-  }
-
-  button:hover {
-    color: black;
-    background: white;
-  }
-
-  select {
-    border: 1px solid white;
-    background-color: #2f2f2f;
-    color: white;
-  }
+select:hover {
+  background-color: #4a4a4a;
+  color: white;
 }
