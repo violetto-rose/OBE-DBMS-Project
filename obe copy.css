@@ -1,0 +1,131 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*Body and footers*/
+body {
+  background: linear-gradient(180deg, #ffffff, #676767);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  min-height: 94vh;
+}
+
+/*Heading and contents*/
+.head {
+  text-align: center;
+  align-items: center;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  height: 0.2rem;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.button-container {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.home-button {
+  display: inline-block;
+  text-align: center;
+  padding: 0.8rem 1.2rem;
+  background-color: #ffffff;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.home-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.result {
+  padding-top: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/*Table*/
+table {
+  width: 100%;
+  border-collapse: separate;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  border: 1px solid black;
+  border-radius: 1.5rem;
+}
+
+td.outcomes {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+/*Mode*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+
+  h1 {
+    background: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRmaXYxcXh2bnhlaXdwd2xjbDc2azQzbjB6bGIyMWJwaWRsazYzbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5RKNOaiojPbbMUsikF/giphy.gif);
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: rgba(255, 255, 255, 0);
+    background-repeat: no-repeat;
+  }
+
+  hr {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .home-button {
+    display: inline-block;
+    text-align: center;
+    padding: 0.8rem 1.2rem;
+    background-color: #3c3c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .home-button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  td {
+    border: 1px solid white;
+  }
+}
