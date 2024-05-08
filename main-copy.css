@@ -36,7 +36,7 @@ hr {
   align-items: center;
 }
 
-.flex h1 {
+.flex h3 {
   margin-top: 2rem;
 }
 
@@ -70,8 +70,7 @@ hr {
 }
 
 .selection {
-  padding: 3rem;
-  padding-top: 2rem;
+  padding: 2rem 3rem 0.5rem 3rem;
   display: grid;
 }
 

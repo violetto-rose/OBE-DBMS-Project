@@ -103,7 +103,7 @@
   ?>
   <div class='button'>
     <span class="btn">
-      <a href='attainment.xlxs' target="_blank">CO-PO Attainment</a>
+      <a href="attainment.xlsx">CO-PO Attainment</a>
 </span>
   </div>
   <div class="button-container">

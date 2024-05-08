@@ -91,8 +91,8 @@ hr {
 
 /*Table*/
 table {
-  width: 100%;
-  border-collapse: separate;
+  width: 90%;
+  border-collapse: collapse;
 }
 
 th,
