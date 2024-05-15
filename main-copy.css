@@ -26,7 +26,7 @@ hr {
 /*Title*/
 .title {
   display: block;
-  padding-bottom: 2rem;
+  padding: 2rem;
 }
 
 .flex {
@@ -41,8 +41,11 @@ hr {
 }
 
 .blue {
-  color: rgba(30,8,91,255);
-  text-shadow: 0px 0px 25px white;
+  color: rgba(30, 8, 91, 255);
+}
+
+.red {
+  color: rgba(208, 13, 22, 255);
 }
 
 .pagetitle {
@@ -60,6 +63,14 @@ hr {
 
 .pagesubtitle {
   font-size: 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
   text-align: center;
 }
 
