@@ -51,34 +51,22 @@ nav:hover {
   background-color: black;
 }
 
-nav:hover a{
+nav:hover a {
   color: white;
 }
 
-/*Body and footers*/
+/*Body and title*/
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: linear-gradient(45deg, #fdfcfb, #e2d1c3);
+  background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+  min-height: 100vh;
 }
 
-footer {
-  padding: 4rem;
-  padding-top: 1rem;
-}
-
-hr {
-  width: 100%;
-  border: none;
-  height: 0.2rem;
-  margin: 1rem 0rem 1rem 0rem;
-}
-
-/*Title*/
 .title {
   display: block;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 4rem 2rem 1rem 2rem;
 }
 
 .flex {
@@ -88,18 +76,6 @@ hr {
   align-items: center;
 }
 
-.flex h3 {
-  margin-top: 2rem;
-}
-
-.blue {
-  color: rgba(30, 8, 91, 255);
-}
-
-.red {
-  color: rgba(208, 13, 22, 255);
-}
-
 .pagetitle {
   font-size: 3rem;
   display: inline-block;
@@ -107,33 +83,11 @@ hr {
   text-align: center;
   padding: 2rem;
   padding-bottom: 1rem;
-  background-image: linear-gradient(45deg, #ff512f, #dd2476);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.pagesubtitle {
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-h1 {
-  text-align: center;
-}
-
-h3 {
-  text-align: center;
+  color: black;
 }
 
 /*Content*/
-.content {
-  font-size: 1.2rem;
-  text-align: center;
-}
-
 .selection {
-  padding: 2rem 3rem 0.5rem 3rem;
   display: grid;
 }
 
@@ -145,42 +99,51 @@ h3 {
   padding-bottom: 1rem;
 }
 
-.headings {
-  font-size: 1.5rem;
+h2 {
+  text-align: center;
 }
 
-.info {
-  font-size: 0.9rem;
+.result {
+  padding: 0 2rem 2rem 2rem;
 }
 
-.info ul {
-  list-style-position: inside;
+/*Table*/
+table {
+  width: 90%;
+  border-collapse: collapse;
 }
 
-.info li {
-  padding-left: 1rem;
+th,
+td {
+  padding: 1rem;
+  text-align: left;
 }
 
-/*Footer*/
-.right {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 1)
-  );
+th {
+  text-align: center;
 }
 
-.left {
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 1)
-  );
+td {
+  border: 1px solid black;
+  border-radius: 1.5rem;
+}
+
+td:has(input) {
+  padding: 0;
+  text-align: center;
+}
+
+td input {
+  width: 90%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid black;
 }
 
 /*Inputs*/
 button,
-select {
+select,
+input {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
@@ -190,7 +153,7 @@ button {
   height: 2.5rem;
   border: 1px solid black;
   outline: none;
-  background: #b5b5b5;
+  background: white;
   color: black;
   font-size: 1rem;
   border-radius: 3rem;
@@ -210,12 +173,27 @@ select {
   padding: 0.2rem;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #b5b5b5;
+  background-color: white;
   color: black;
   transition: all 0.5s;
 }
 
 select:hover {
-  background-color: #4a4a4a;
-  color: white;
+  background-color: wheat;
+}
+
+input {
+  border: 1px solid black;
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+}
+
+.my-btn {
+  text-align: center;
+  padding: 2rem;
+}
+
+.my-btn button {
+  width: 6rem;
 }

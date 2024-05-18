@@ -48,7 +48,7 @@
   // Establish a database connection
   $servername = "localhost";
   $username = "root";
-  $password = "manju";
+  $password = "";
   $dbname = "csd";
 
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -78,6 +78,7 @@
                 <th>Subject Number</th>
                 <th>Subject Code</th>
                 <th>Subject Name</th>
+                <th>Credits</th>
                 <th>Faculty</th>
               </tr>";
 
@@ -89,6 +90,7 @@
                   <td>" . $row["subject_number"] . "</td>
                   <td>" . $row["subject_code"] . "</td>
                   <td>" . $row["subject_name"] . "</td>
+                  <td>" . $row["credits"] . "</td>
                   <td>" . $row["faculty"] . "</td>
                 </tr>
               </div>";
@@ -105,7 +107,7 @@
   <div class='button'>
     <span class="btn">
       <a href="attainment.xlsx">CO-PO Attainment</a>
-</span>
+    </span>
   </div>
   <div class="button-container">
     <a href="main-copy.html" class="home-button">Home</a>
