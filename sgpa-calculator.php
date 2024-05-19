@@ -28,7 +28,7 @@
     <nav>
         <div class="nav-container">
             <ul>
-                <li><a href="main-copy.html">Home</a></li>
+                <li><a href="main.html">Home</a></li>
                 <li><a href="mailto:manjumadhav.va@gmail.com">Contact Us</a></li>
             </ul>
         </div>

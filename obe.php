@@ -13,7 +13,7 @@
     content="A project on OBE (Outcome based education) tracker with Course and Program outcome details along with subject information." />
 
   <!--Styles-->
-  <link rel="stylesheet" href="obe-copy.css" />
+  <link rel="stylesheet" href="obe.css" />
 
   <!--Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -110,7 +110,7 @@
     </span>
   </div>
   <div class="button-container">
-    <a href="main-copy.html" class="home-button">Home</a>
+    <a href="main.html" class="home-button">Home</a>
   </div>
 
 </body>
