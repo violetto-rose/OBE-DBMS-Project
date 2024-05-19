@@ -12,7 +12,7 @@
         content="A project on OBE (Outcome based education) tracker with Course and Program outcome details along with subject information." />
 
     <!--Styles-->
-    <link rel="stylesheet" href="sgpa.css" />
+    <link rel="stylesheet" href="CSS/sgpa.css" />
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
