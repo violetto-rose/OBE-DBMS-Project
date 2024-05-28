@@ -74,10 +74,10 @@
     </form>
 
     <?php
-    $servername = "localhost";
+    $servername = "localhost:3307";
     $username = "root";
     $password = "";
-    $dbname = "csd";
+    $dbname = "OBE";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
