@@ -1,0 +1,103 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*Nav bar*/
+nav {
+  background-color: transparent;
+  width: 100%;
+  padding: 1rem;
+  position: fixed;
+  font-weight: 500;
+  font-size: 1.2rem;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  transition: all 0.1s;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  padding: 0.5rem 1rem 0.5rem 0;
+  display: inline;
+}
+
+nav ul:last-child {
+  padding-right: 1rem;
+}
+
+nav:hover {
+  background-color: black;
+}
+
+nav:hover a {
+  color: white;
+}
+
+/*Body*/
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(45deg, #fdfcfb, #72f8ae);
+  background-repeat: no-repeat;
+  height: 90vh;
+}
+
+/*Content*/
+.semester-results {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 5rem 0;
+  padding: 1rem;
+}
+
+.semester-results h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.3rem;
+}
+
+.semester-results ul {
+  list-style-type: none;
+}
+
+.semester-results ul li {
+  margin-bottom: 0.6rem;
+}
+
+.semester-results ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.semester-results ul li a:hover {
+  color: #0056b3;
+}
