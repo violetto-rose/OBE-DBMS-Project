@@ -61,7 +61,10 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $scheme = $_POST["scheme"];
     $semester = $_POST["semester"];
-    $sql = "SELECT * FROM csd WHERE scheme_year = $scheme AND semester = $semester";
+    $stmt = $conn->prepare("SELECT * FROM csd WHERE scheme_year = ? AND semester = ?");
+    $stmt->bind_param("ii", $scheme, $semester);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     echo "<div class='head'>
             <h1>Department of Computer Science and Design</h1>
@@ -70,7 +73,6 @@
             <hr />
           </div>";
 
-    $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       echo "<table>
               <tr>

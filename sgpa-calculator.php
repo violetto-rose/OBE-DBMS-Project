@@ -88,8 +88,10 @@
     // Function to fetch subjects based on selected semester and scheme
     function fetchSubjects($conn, $semester, $scheme)
     {
-        $sql = "SELECT * FROM csd WHERE semester = '$semester' AND scheme_year = '$scheme'";
-        return $conn->query($sql);
+        $stmt = $conn->prepare("SELECT * FROM csd WHERE semester = ? AND scheme_year = ?");
+        $stmt->bind_param("ii", $semester, $scheme);
+        $stmt->execute();
+        return $stmt->get_result();
     }
 
     // Fetching credits based on selected semester and scheme
