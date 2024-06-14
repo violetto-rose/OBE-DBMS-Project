@@ -46,7 +46,7 @@
   }
 
   // Establish a database connection
-  $servername = "localhost:3307";
+  $servername = "localhost";
   $username = "root";
   $password = "";
   $dbname = "OBE";
