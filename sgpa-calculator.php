@@ -18,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+    <!--Script-->
+    <script src="JS/cookies.js"></script>
 </head>
 
 <!--Body-->
@@ -88,10 +91,36 @@
     // Function to fetch subjects based on selected semester and scheme
     function fetchSubjects($conn, $semester, $scheme)
     {
-        $stmt = $conn->prepare("SELECT * FROM csd WHERE semester = ? AND scheme_year = ?");
+        $stmt = $conn->prepare("SELECT * FROM csd_main WHERE semester = ? AND scheme_year = ? ORDER BY subject_number");
         $stmt->bind_param("ii", $semester, $scheme);
         $stmt->execute();
-        return $stmt->get_result();
+
+        // Store the result set in a variable
+        $result = $stmt->get_result();
+
+        // Free the previous statement to avoid "Commands out of sync" error
+        $stmt->free_result();
+        $stmt->close();
+
+        return $result;
+    }
+
+    // Function to fetch subject details
+    function fetchSubjectDetails($conn, $subject_code)
+    {
+        $stmt_details = $conn->prepare("SELECT subject_name, credits FROM subjects WHERE subject_code = ?");
+        $stmt_details->bind_param("s", $subject_code);
+        $stmt_details->execute();
+        $result = $stmt_details->get_result();
+
+        // Fetch the result row
+        $row = $result->fetch_assoc();
+
+        // Free the result and close the statement
+        $stmt_details->free_result();
+        $stmt_details->close();
+
+        return $row;
     }
 
     // Fetching credits based on selected semester and scheme
@@ -113,14 +142,25 @@
             $credits = isset($_POST['credits']) ? $_POST['credits'] : [];
             $i = 0;
             while ($row = $result->fetch_assoc()) {
-                $currentMarks = isset($marks[$i]) ? $marks[$i] : '';
-                echo "<tr>";
-                echo "<td>" . $row['subject_name'] . "</td>";
-                echo "<td>" . $row['credits'] . "</td>";
-                echo "<td><input type='text' name='marks[]' value='" . htmlspecialchars($currentMarks) . "'></td>";
-                echo "<input type='hidden' name='credits[]' value='" . $row['credits'] . "'>";
-                echo "</tr>";
-                $i++;
+                $subject_code = $row["subject_code"];
+
+                // Fetch subject_name and credits from the database
+                $subject_details = fetchSubjectDetails($conn, $subject_code);
+
+                // Check if subject details are fetched properly
+                if ($subject_details) {
+                    $currentMarks = isset($marks[$i]) ? $marks[$i] : '';
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($subject_details['subject_name']) . "</td>";
+                    echo "<td class='credits'>" . $subject_details['credits'] . "</td>";
+                    echo "<td><input type='text' name='marks[]' value='" . htmlspecialchars($currentMarks) . "'></td>";
+                    echo "<input type='hidden' name='credits[]' value='" . $subject_details['credits'] . "'>";
+                    echo "</tr>";
+                    $i++;
+                } else {
+                    // Handle case where subject details are not found
+                    echo "<tr><td colspan='3'>Subject details not found for subject code: $subject_code</td></tr>";
+                }
             }
             echo "</table>";
             echo "<input type='hidden' name='semester' value='$semester'>";

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -33,15 +32,13 @@
       case 3:
         return $semester . 'rd';
       case 4:
-        return $semester . 'th';
       case 5:
-        return $semester . 'th';
       case 6:
-        return $semester . 'th';
       case 7:
-        return $semester . 'th';
       case 8:
         return $semester . 'th';
+      default:
+        return ''; // Handle other cases as needed
     }
   }
 
@@ -61,7 +58,7 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $scheme = $_POST["scheme"];
     $semester = $_POST["semester"];
-    $stmt = $conn->prepare("SELECT * FROM csd WHERE scheme_year = ? AND semester = ?");
+    $stmt = $conn->prepare("SELECT * FROM csd_main WHERE scheme_year = ? AND semester = ? ORDER BY subject_number");
     $stmt->bind_param("ii", $scheme, $semester);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -74,30 +71,57 @@
           </div>";
 
     if ($result->num_rows > 0) {
-      echo "<table>
-              <tr>
-                <th>Serial Number</th>
-                <th>Subject Number</th>
-                <th>Subject Code</th>
-                <th>Subject Name</th>
-                <th>Credits</th>
-                <th>Faculty</th>
-              </tr>";
-
+      echo "<div class='subjects-container'>";
       while ($row = $result->fetch_assoc()) {
+        // Fetch additional details for each subject
+        $subject_code = $row["subject_code"];
+        $subject_name = "";
+        $faculty = "";
+        $credits = 0;
+        $course_outcomes = array();
 
-        echo "<div class='outcomes'>
-                <tr>
-                  <td>" . $row["serial_number"] . "</td>
-                  <td>" . $row["subject_number"] . "</td>
-                  <td>" . $row["subject_code"] . "</td>
-                  <td>" . $row["subject_name"] . "</td>
-                  <td>" . $row["credits"] . "</td>
-                  <td>" . $row["faculty"] . "</td>
-                </tr>
+        // Query to fetch subject details
+        $stmt_details = $conn->prepare("SELECT subject_name, faculty, credits FROM subjects WHERE subject_code = ?");
+        $stmt_details->bind_param("s", $subject_code);
+        $stmt_details->execute();
+        $result_details = $stmt_details->get_result();
+
+        if ($result_details->num_rows > 0) {
+          $row_details = $result_details->fetch_assoc();
+          $subject_name = $row_details["subject_name"];
+          $faculty = $row_details["faculty"];
+          $credits = $row_details["credits"];
+        }
+
+        // Query to fetch course outcomes
+        $stmt_outcomes = $conn->prepare("SELECT course_outcome FROM course_outcomes WHERE subject_code = ?");
+        $stmt_outcomes->bind_param("s", $subject_code);
+        $stmt_outcomes->execute();
+        $result_outcomes = $stmt_outcomes->get_result();
+
+        while ($row_outcome = $result_outcomes->fetch_assoc()) {
+          $course_outcomes[] = $row_outcome["course_outcome"];
+        }
+
+        // Display subject information
+        echo "<div class='subject-container'>
+                <h2>$subject_name</h2>
+                <p><strong>Subject Code:</strong> $subject_code</p>
+                <p><strong>Faculty:</strong> $faculty</p>
+                <p><strong>Credits:</strong> $credits</p>";
+
+        echo "<div class='course-outcomes'>
+                <strong>Course Outcomes:</strong>
+                <ul>";
+        foreach ($course_outcomes as $outcome) {
+          echo "<li>$outcome</li>";
+        }
+        echo "</ul>
               </div>";
+
+        echo "</div>";
       }
-      echo "</table>";
+      echo "</div>";
     } else {
       echo "<div class='result'>
               <p>NO RESULTS</p>
@@ -106,11 +130,13 @@
   }
   $conn->close();
   ?>
+
   <div class='button'>
     <span class="btn">
       <a href="uploads/attainment.xlsx">CO-PO Attainment</a>
     </span>
   </div>
+
   <div class="button-container">
     <a href="main.html" class="home-button">Home</a>
   </div>

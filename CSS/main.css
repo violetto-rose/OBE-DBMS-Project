@@ -219,3 +219,48 @@ select:hover {
   background-color: #4a4a4a;
   color: white;
 }
+
+@media only screen and (max-width: 768px) {
+  nav li {
+    font-size: 0.75rem;
+  }
+
+  .title {
+    padding: 4rem 1rem 2rem 1rem;
+  }
+
+  .flex h3 {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .flex h1 {
+    font-size: 1.5rem;
+  }
+
+  .pagetitle {
+    padding: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .selection {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .scheme, .semester {
+    padding-bottom: 0.5rem;
+  }
+
+  select, button {
+    font-size: 1.1rem;
+  }
+
+  .mybutton {
+    padding: 0.5rem;
+  }
+
+  footer {
+    padding: 1.5rem;
+  }
+}

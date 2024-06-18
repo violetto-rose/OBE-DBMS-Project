@@ -1,17 +1,14 @@
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/*Body and footers*/
 body {
-  background: linear-gradient(180deg, #ffffff, #676767);
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  background: linear-gradient(180deg, #c9c9c9, #282828);
+  padding: 1.5rem;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  min-height: 94vh;
+  min-height: 100vh;
 }
 
 a {
@@ -19,10 +16,9 @@ a {
   color: white;
 }
 
-/*Heading and contents*/
 .head {
   text-align: center;
-  align-items: center;
+  margin-bottom: 1rem;
 }
 
 hr {
@@ -38,8 +34,8 @@ hr {
 }
 
 .button {
-  display: flex;
-  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .btn {
@@ -47,17 +43,13 @@ hr {
   color: white;
   padding: 0.8rem 1rem;
   border-radius: 3rem;
-  position: relative;
   transition: all 0.5s;
   cursor: pointer;
 }
 
 .btn:hover {
-  a {
-    transition: all 0.5s;
-    color: black;
-  }
   background-color: white;
+  color: black;
 }
 
 .button-container {
@@ -67,15 +59,12 @@ hr {
 
 .home-button {
   display: inline-block;
-  text-align: center;
   padding: 0.8rem 1.2rem;
   text-decoration: none;
   border-radius: 5px;
   transition: all 0.5s;
-  position: relative;
   color: black;
   background-color: white;
-  cursor: pointer;
 }
 
 .home-button:hover {
@@ -89,23 +78,60 @@ hr {
   text-align: center;
 }
 
-/*Table*/
-table {
-  width: 90%;
-  border-collapse: collapse;
+.subjects-container {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-th,
-td {
-  padding: 1rem;
-  text-align: left;
+.subject-container {
+  background-image: url("../images/texture.jpg");
+  background-repeat: repeat-x;
+  background-size: contain;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-in-out, z-index 0s;
 }
 
-th {
-  text-align: center;
+.subject-container:hover {
+  transform: scale(1.01);
+  z-index: 1;
 }
 
-td {
-  border: 1px solid black;
-  border-radius: 1.5rem;
+.subject-container p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.subject-container strong {
+  font-weight: bold;
+}
+
+.subject-container ul {
+  padding-left: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .subjects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .subject-container {
+    background-repeat: repeat-y;
+    background-size: cover;
+  }
+}
+
+/* Adjust for odd number of subjects */
+@media (min-width: 768px) {
+  .subjects-container {
+    grid-auto-rows: auto;
+  }
+  .subject-container:last-child {
+    grid-column-end: span 2;
+  }
 }
