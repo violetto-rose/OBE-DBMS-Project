@@ -114,7 +114,15 @@
                 <strong>Course Outcomes:</strong>
                 <ul>";
         foreach ($course_outcomes as $outcome) {
-          echo "<li>$outcome</li>";
+          // Split the outcome string by periods and iterate over each segment
+          $outcome_segments = explode('.', $outcome);
+          foreach ($outcome_segments as $segment) {
+            // Trim any leading/trailing whitespace and check if the segment is not empty
+            $segment = trim($segment);
+            if (!empty($segment)) {
+              echo "<li>$segment.</li>";
+            }
+          }
         }
         echo "</ul>
               </div>";
@@ -138,7 +146,7 @@
   </div>
 
   <div class="button-container">
-    <a href="main.html" class="home-button">Home</a>
+    <a href="index.html" class="home-button">Home</a>
   </div>
 
 </body>
