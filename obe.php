@@ -14,6 +14,9 @@
   <!--Styles-->
   <link rel="stylesheet" href="CSS/obe.css" />
 
+  <!--Script-->
+  <script src="JS/imageloader.js"></script>
+
   <!--Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
